@@ -319,35 +319,68 @@ FROM artikel;
 
 1. Lassen Sie sich bis auf die Artikelnummer alle Artikeldaten der Hersteller mit der Herstellernummer 10, 30 und 50 anzeigen.
 ```SQL
-
+SELECT herstellernummer, artikelname, preis
+FROM artikel
+WHERE herstellernummer IN (10, 30, 50);
 ```
-```SQL
-
+```
++------------------+-------------+--------+
+| herstellernummer | artikelname | preis  |
++------------------+-------------+--------+
+|               10 | Maus        |  10.00 |
+|               10 | Tastatur    |  20.00 |
+|               30 | Festplatte  | 400.00 |
+|               50 | Drucker     | 300.00 |
++------------------+-------------+--------+
 ```
 
 2. Lassen Sie sich alle Artikelnamen und die dazugehörigen Artikelpreise ausgeben, die zwischen 200 und 400 liegen.
 ```SQL
-
+SELECT artikelname, preis
+FROM artikel
+WHERE preis BETWEEN 200 AND 400;
 ```
-```SQL
-
+```
++-------------+--------+
+| artikelname | preis  |
++-------------+--------+
+| Drucker     | 300.00 |
+| Festplatte  | 400.00 |
++-------------+--------+
 ```
 
 3. Lassen Sie sich alle Artikelnamen und dazugehörigen Artikelpreise ausgeben, deren Name mit dem Buchstaben M beginnt.
 ```SQL
-
+SELECT artikelname, preis
+FROM artikel
+WHERE artikelname LIKE 'M%';
 ```
-```SQL
-
+```
++-------------+--------+
+| artikelname | preis  |
++-------------+--------+
+| Maus        |  10.00 |
+| Monitor     | 500.00 |
++-------------+--------+
 ```
 
 #### Abfragen mit der Tabelle 'hersteller' aus.
+
 4. Lassen Sie sich die Herstellernamen und die dazugehörigen Länder anzeigen.
 ```SQL
-
+SELECT herstellername, land
+FROM hersteller;
 ```
-```SQL
-
+```
++-----------------+-------------+
+| herstellername  | land        |
++-----------------+-------------+
+| Logitech        | Schweiz     |
+| SONY            | Japan       |
+| Maxtor          | USA         |
+| Medion          | Deutschland |
+| Hewlett Packard | USA         |
++-----------------+-------------+
 ```
 
 5. Lassen Sie sich alle Herstellernamen und die dazugehörigen Länder anzeigen, die Hersteller beginnen mit dem Buchstaben M und sind nicht aus Japan sind.
