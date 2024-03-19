@@ -22,6 +22,14 @@
 |              8 | David         | Paula   | Murielstrasse 47   | Klagenfurt     |  9020 | Österreich  | 1970-01-21   |
 |              9 | Hardiff       | Joseph  | Bischofstrasse 139 | Klagenfurt     |  9200 | Österreich  | 1962-08-09   |
 
+### artikel
+|`artikelnummer`|`herstellernummer`|`artikelname`| `preis`|
+|---------------|------------------|-------------|--------|
+|             1 |               10 | Maus        |  10.00 |
+|             2 |               10 | Tastatur    |  20.00 |
+|             3 |               50 | Drucker     | 300.00 |
+|             4 |               30 | Festplatte  | 400.00 |
+|             5 |               20 | Monitor     | 500.00 |
 
 ### hersteller
 |`herstellernummer`| `herstellername`|   `land`    |
@@ -32,16 +40,6 @@
 |               40 | Medion          | Deutschland |
 |               50 | Hewlett Packard | USA         |
 
-
-### artikel
-|`artikelnummer`|`herstellernummer`|`artikelname`| `preis`|
-|---------------|------------------|-------------|--------|
-|             1 |               10 | Maus        |  10.00 |
-|             2 |               10 | Tastatur    |  20.00 |
-|             3 |               50 | Drucker     | 300.00 |
-|             4 |               30 | Festplatte  | 400.00 |
-|             5 |               20 | Monitor     | 500.00 |
-
 ### bestellung
 |`bestellnummer`|`artikelnummer`|`kundennummer`|`artikelanzahl`|`bestellsumme`|
 |---------------|---------------|--------------|---------------|--------------|
@@ -50,8 +48,6 @@
 |             3 |             1 |            2 |             3 |        30.00 |
 |             4 |             3 |            3 |             1 |       300.00 |
 |             5 |             5 |            5 |             5 |      2500.00 |
-
-
 
 
 ## 1. Abfragen erstellen
