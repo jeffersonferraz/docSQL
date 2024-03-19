@@ -10,6 +10,21 @@
 8. Abfragen über mehrere Tabellen und Unterabfragen erstellen
 
 
+| `personennummer` | `nachname`      | `vorname` | `strasse`            | `ort`            | `plz`   | `land`        | `geburtsdatum` |
+|----------------|---------------|---------|--------------------|----------------|-------|-------------|--------------|
+|              1 | Blotzek       | Ulrich  | Großkopf 4         | Arnsberg       | 59823 | Deutschland | 1960-10-05   |
+|              2 | Schatter      | Peter   | Försterstrasse 56  | Augsburg       | 86179 | Deutschland | 1980-01-01   |
+|              3 | Wojack        | Albert  | Westendstrasse 92  | Berlin         | 12234 | Deutschland | 1955-06-15   |
+|              4 | Virtanen      | Veera   | Oyi Keilasatama 21 | Espoo          |  2150 | Finnland    | 1992-12-30   |
+|              5 | Hämäläinen    | Ahvo    | Tapulikuja 56      | Forssa         | 30100 | Finnland    | 1977-04-23   |
+|              6 | Huisman       | Fenna   | Spoordreef 87      | Almere         |  1315 | Niederlande | 1971-08-17   |
+|              7 | Prins         | Lieke   | Noordgeest 21      | Bergen op Zoom |  4600 | Niederlande | 1987-05-08   |
+|              8 | David         | Paula   | Murielstrasse 47   | Klagenfurt     |  9020 | Österreich  | 1970-01-21   |
+|              9 | Hardiff       | Joseph  | Bischofstrasse 139 | Klagenfurt     |  9200 | Österreich  | 1962-08-09   |
+
+
+
+
 ## 1. Abfragen erstellen
 
 #### Abfragen mit der Tabelle 'person' aus.
