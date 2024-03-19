@@ -35,7 +35,8 @@ SELECT * FROM person;
 
 2. Lassen Sie sich in der angegebenen Reihenfolge den Vornamen, den Nachnamen, das Geburtsdatum und den Wohnort aller Personen anzeigen.
 ```SQL
-SELECT vorname, nachname, geburtsdatum, ort FROM person;
+SELECT vorname, nachname, geburtsdatum, ort
+FROM person;
 ```
 ```
 +---------+---------------+--------------+----------------+
@@ -74,7 +75,8 @@ SELECT DISTINCT ort FROM person;
 
 4. Lassen Sie sich in der angegebenen Reihenfolge den Vornamen, den Nachnamen, die Postleitzahl und den Wohnort aller Personen ausgeben. Sortieren Sie Nachname und Vorname in alphabetischer Reihenfolge.
 ```SQL
-SELECT vorname, nachname, plz, ort FROM person
+SELECT vorname, nachname, plz, ort
+FROM person
 ORDER BY nachname, vorname ASC;
 ```
 ```
@@ -187,7 +189,8 @@ WHERE ort = 'Berlin';
 
 2. Lassen Sie sich die Vornamen, Nachnamen und Wohnorte aller Personen anzeigen, die entweder in Berlin oder in Klagenfurt wohnen.
 ```SQL
-SELECT vorname, nachname, ort FROM person
+SELECT vorname, nachname, ort
+FROM person
 WHERE ort = 'Berlin' OR ort = 'Klagenfurt';
 ```
 ```
@@ -202,7 +205,8 @@ WHERE ort = 'Berlin' OR ort = 'Klagenfurt';
 
 3. Lassen Sie sich die Vornamen, Nachnamen und Wohnorte aller Personen anzeigen, die nicht in Berlin wohnen.
 ```SQL
-SELECT vorname, nachname, ort FROM person
+SELECT vorname, nachname, ort
+FROM person
 WHERE NOT ort = 'Berlin';
 ```
 ```
@@ -222,7 +226,8 @@ WHERE NOT ort = 'Berlin';
 
 4. Lassen Sie sich die Nachnamen, Wohnorte und Geburtsdaten aller Personen anzeigen, die in Deutschland wohnen und nach dem 01.06.1960 geboren worden sind.
 ```SQL
-SELECT nachname, ort, geburtsdatum FROM person
+SELECT nachname, ort, geburtsdatum
+FROM person
 WHERE land = 'Deutschland' AND geburtsdatum > '1960-06-01';
 ```
 ```
@@ -240,18 +245,31 @@ WHERE land = 'Deutschland' AND geburtsdatum > '1960-06-01';
 
 1. Lassen Sie sich von allen Artikeln, die mehr als 300 kosten, den Artikelnamen, den Preis und einen um 20 % erhöhten Preis ausgeben. Runden Sie den berechneten Preis auf zwei Nachkommastellen. Nennen Sie die Tabellenspalten der Ergebnistabelle Artikel, Nettopreis und Neupreis.
 ```SQL
-
+SELECT artikelname AS Artikel, preis AS Nettopreis, ROUND(preis + (preis * 20/100), 2) AS Neupreis
+FROM artikel
+WHERE preis > 300 ;
 ```
-```SQL
-
+```
++------------+------------+----------+
+| Artikel    | Nettopreis | Neupreis |
++------------+------------+----------+
+| Festplatte |     400.00 |   480.00 |
+| Monitor    |     500.00 |   600.00 |
++------------+------------+----------+
 ```
 
 2. Ermitteln Sie den durchschnittlichen Preis von Tastatur, Drucker und Festplatte. Nennen Sie die Tabellenspalte der Ergebnistabelle Durchschnittspreis.
 ```SQL
-
+SELECT AVG(preis) AS Durchschnittspreis
+FROM artikel
+WHERE artikelname = 'Tastatur' OR artikelname = 'Drucker' OR artikelname = 'Festplatte';
 ```
-```SQL
-
+```
++--------------------+
+| Durchschnittspreis |
++--------------------+
+|         240.000000 |
++--------------------+
 ```
 
 3. Ermitteln Sie die Anzahl aller Artikel, die vom Hersteller mit der Herstellernummer 10 angeboten werden. Nennen Sie die Tabellenspalte der Ergebnistabelle Artikelanzahl.
