@@ -153,10 +153,19 @@ FROM artikel;
 
 3. Welche Bestellsumme pro Artikel entsteht, wenn Sie von jedem Artikel 50 Stück bestellen. Lassen Sie sich Artikelname, Einzelpreis und Gesamtpreis anzeigen. Benennen Sie die entsprechenden Tabellenspalten Artikel, Einzelpreis, Gesamtpreis.
 ```SQL
-
+SELECT artikelname AS Artikel, preis AS Einzelpreis, preis * 50 AS Gesamtpreis
+FROM artikel;
 ```
-```SQL
-
+```
++------------+-------------+-------------+
+| Artikel    | Einzelpreis | Gesamtpreis |
++------------+-------------+-------------+
+| Maus       |       10.00 |      500.00 |
+| Tastatur   |       20.00 |     1000.00 |
+| Drucker    |      300.00 |    15000.00 |
+| Festplatte |      400.00 |    20000.00 |
+| Monitor    |      500.00 |    25000.00 |
++------------+-------------+-------------+
 ```
 
 ## 3. Abfragen mit logischen Operatoren
@@ -165,18 +174,30 @@ FROM artikel;
 
 1. Lassen Sie sich die Personendaten aller Personen anzeigen, die in Berlin wohnen.
 ```SQL
-
+SELECT * FROM person
+WHERE ort = 'Berlin';
 ```
-```SQL
-
+```
++----------------+----------+---------+-------------------+--------+-------+-------------+--------------+
+| personennummer | nachname | vorname | strasse           | ort    | plz   | land        | geburtsdatum |
++----------------+----------+---------+-------------------+--------+-------+-------------+--------------+
+|              3 | Wojack   | Albert  | Westendstrasse 92 | Berlin | 12234 | Deutschland | 1955-06-15   |
++----------------+----------+---------+-------------------+--------+-------+-------------+--------------+
 ```
 
 2. Lassen Sie sich die Vornamen, Nachnamen und Wohnorte aller Personen anzeigen, die entweder in Berlin oder in Klagenfurt wohnen.
 ```SQL
-
+SELECT vorname, nachname, ort FROM person
+WHERE ort = 'Berlin' OR ort = 'Klagenfurt';
 ```
-```SQL
-
+```
++---------+----------+------------+
+| vorname | nachname | ort        |
++---------+----------+------------+
+| Albert  | Wojack   | Berlin     |
+| Paula   | David    | Klagenfurt |
+| Joseph  | Hardiff  | Klagenfurt |
++---------+----------+------------+
 ```
 
 3. Lassen Sie sich die Vornamen, Nachnamen und Wohnorte aller Personen anzeigen, die nicht in Berlin wohnen.
