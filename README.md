@@ -301,7 +301,17 @@ WHERE herstellernummer = 10;
 ```
 
 5. Ermitteln Sie den billigsten und den teuersten Artikel. Nennen Sie die Tabellenspalten der Ergebnistabelle Billig und Teuer.
-
+```SQL
+SELECT MIN(preis) AS Billig, MAX(preis) AS Teuer
+FROM artikel;
+```
+```
++--------+--------+
+| Billig | Teuer  |
++--------+--------+
+|  10.00 | 500.00 |
++--------+--------+
+```
 
 ## 5. Abfragen mit dem Vergleich von Zeichenketten
 
