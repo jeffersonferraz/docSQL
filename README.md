@@ -383,20 +383,33 @@ FROM hersteller;
 +-----------------+-------------+
 ```
 
-5. Lassen Sie sich alle Herstellernamen und die dazugehörigen Länder anzeigen, die Hersteller beginnen mit dem Buchstaben M und sind nicht aus Japan sind.
+5. Lassen Sie sich alle Herstellernamen und die dazugehörigen Länder anzeigen, die mit dem Buchstaben M beginnen und nicht aus Japan sind.
 ```SQL
-
+SELECT herstellername, land
+FROM hersteller
+WHERE herstellername LIKE 'M%' AND NOT land = 'Japan';
 ```
-```SQL
-
+```
++----------------+-------------+
+| herstellername | land        |
++----------------+-------------+
+| Maxtor         | USA         |
+| Medion         | Deutschland |
++----------------+-------------+
 ```
 
 6. Lassen Sie sich alle Herstellernamen und die dazugehörigen Länder anzeigen, die nicht mit dem Buchstaben M beginnen und entweder aus Deutschland oder den USA sind.
 ```SQL
-
+SELECT herstellername, land
+FROM hersteller
+WHERE herstellername NOT LIKE 'M%' AND land IN ('Deutschland', 'USA');
 ```
-```SQL
-
+```
++-----------------+------+
+| herstellername  | land |
++-----------------+------+
+| Hewlett Packard | USA  |
++-----------------+------+
 ```
 
 ## 6. Abfragen mit Zeichenketten- und Datumsfunktion
@@ -405,10 +418,23 @@ FROM hersteller;
 
 1. Geben Sie in jeweils einer Spalte einer Ergebnistabelle den Namen einer Person bestehend aus Vornamen und Nachnamen sowie die Anschrift bestehend aus Postleitzahl und Ort aus. Fügen Sie in der Ausgabe zwischen Vornamen und Nachnamen sowie zwischen Postleitzahl und Ort ein Leerzeichen ein. Nennen Sie die Spalten der Ergebnistabelle Name und Anschrift.
 ```SQL
-
+SELECT CONCAT(vorname, ' ', nachname) AS Name, CONCAT(plz, ' - ', ort) AS Anschrift
+FROM person;
 ```
-```SQL
-
+```
++--------------------+-----------------------+
+| Name               | Anschrift             |
++--------------------+-----------------------+
+| Ulrich Blotzek     | 59823 - Arnsberg      |
+| Peter Schatter     | 86179 - Augsburg      |
+| Albert Wojack      | 12234 - Berlin        |
+| Veera Virtanen     | 2150 - Espoo          |
+| Ahvo Hämäläinen    | 30100 - Forssa        |
+| Fenna Huisman      | 1315 - Almere         |
+| Lieke Prins        | 4600 - Bergen op Zoom |
+| Paula David        | 9020 - Klagenfurt     |
+| Joseph Hardiff     | 9200 - Klagenfurt     |
++--------------------+-----------------------+
 ```
 
 2. Ermitteln Sie die Länge aller Ortsnamen und geben Sie Ortsnamen und Länge in einer Ergebnistabelle aus. Nennen Sie die Spalten der Ergebnistabelle «Ortsname» und «Ortsnamenlänge». Unterdrücken Sie die Mehrfachanzeige identischer Ortsangaben.
