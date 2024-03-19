@@ -274,10 +274,16 @@ WHERE artikelname = 'Tastatur' OR artikelname = 'Drucker' OR artikelname = 'Fest
 
 3. Ermitteln Sie die Anzahl aller Artikel, die vom Hersteller mit der Herstellernummer 10 angeboten werden. Nennen Sie die Tabellenspalte der Ergebnistabelle Artikelanzahl.
 ```SQL
-
+SELECT COUNT(artikelnummer) AS Artikelanzahl
+FROM artikel
+WHERE herstellernummer = 10;
 ```
-```SQL
-
+```
++---------------+
+| Artikelanzahl |
++---------------+
+|             2 |
++---------------+
 ```
 
 4. Ermitteln Sie den Gesamtpreis, wenn Sie jeweils 5 Artikel des Herstellers mit der Herstellernummer 10 kaufen würden. Nennen Sie die Tabellenspalte der Ergebnistabelle Gesamtpreis.
