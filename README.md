@@ -33,6 +33,15 @@
 |               50 | Hewlett Packard | USA         |
 
 
+### Tabelle artikel
+|`artikelnummer`|`herstellernummer`|`artikelname`| `preis`|
+|---------------|------------------|-------------|--------|
+|             1 |               10 | Maus        |  10.00 |
+|             2 |               10 | Tastatur    |  20.00 |
+|             3 |               50 | Drucker     | 300.00 |
+|             4 |               30 | Festplatte  | 400.00 |
+|             5 |               20 | Monitor     | 500.00 |
+
 ## 1. Abfragen erstellen
 
 #### Abfragen mit der Tabelle 'person' aus.
