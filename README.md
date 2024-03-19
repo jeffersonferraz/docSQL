@@ -95,10 +95,23 @@ ORDER BY nachname, vorname ASC;
 
 5. Lassen Sie sich in der angegebenen Reihenfolge den Nachnamen, den Wohnort, PLZ sowie das Land aller Personen anzeigen. Verwenden Sie in der Ergebnistabelle den Spaltennamen: Name, Land, Wohnort und Postleitzahl.
 ```SQL
-
+SELECT nachname AS Name, ort AS Wohnort, plz AS Postleitzahl, land AS Land
+FROM person;
 ```
-```SQL
-
+```
++---------------+----------------+--------------+-------------+
+| Name          | Wohnort        | Postleitzahl | Land        |
++---------------+----------------+--------------+-------------+
+| Blotzek       | Arnsberg       |        59823 | Deutschland |
+| Schatter      | Augsburg       |        86179 | Deutschland |
+| Wojack        | Berlin         |        12234 | Deutschland |
+| Virtanen      | Espoo          |         2150 | Finnland    |
+| Hämäläinen    | Forssa         |        30100 | Finnland    |
+| Huisman       | Almere         |         1315 | Niederlande |
+| Prins         | Bergen op Zoom |         4600 | Niederlande |
+| David         | Klagenfurt     |         9020 | Österreich  |
+| Hardiff       | Klagenfurt     |         9200 | Österreich  |
++---------------+----------------+--------------+-------------+
 ```
 
 ## 2. Abfragen mit einfachen Aggregat-Funktionen
