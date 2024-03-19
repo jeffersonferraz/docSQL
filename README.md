@@ -74,10 +74,23 @@ SELECT DISTINCT ort FROM person;
 
 4. Lassen Sie sich in der angegebenen Reihenfolge den Vornamen, den Nachnamen, die Postleitzahl und den Wohnort aller Personen ausgeben. Sortieren Sie Nachname und Vorname in alphabetischer Reihenfolge.
 ```SQL
-
+SELECT vorname, nachname, plz, ort FROM person
+ORDER BY nachname, vorname ASC;
 ```
-```SQL
-
+```
++---------+---------------+-------+----------------+
+| vorname | nachname      | plz   | ort            |
++---------+---------------+-------+----------------+
+| Ulrich  | Blotzek       | 59823 | Arnsberg       |
+| Paula   | David         |  9020 | Klagenfurt     |
+| Ahvo    | Hämäläinen    | 30100 | Forssa         |
+| Joseph  | Hardiff       |  9200 | Klagenfurt     |
+| Fenna   | Huisman       |  1315 | Almere         |
+| Lieke   | Prins         |  4600 | Bergen op Zoom |
+| Peter   | Schatter      | 86179 | Augsburg       |
+| Veera   | Virtanen      |  2150 | Espoo          |
+| Albert  | Wojack        | 12234 | Berlin         |
++---------+---------------+-------+----------------+
 ```
 
 5. Lassen Sie sich in der angegebenen Reihenfolge den Nachnamen, den Wohnort, PLZ sowie das Land aller Personen anzeigen. Verwenden Sie in der Ergebnistabelle den Spaltennamen: Name, Land, Wohnort und Postleitzahl.
