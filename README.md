@@ -55,10 +55,21 @@ SELECT vorname, nachname, geburtsdatum, ort FROM person;
 
 3. Lassen Sie sich alle Wohnorte anzeigen. Unterdrücken Sie dabei die Mehrfachanzeige identischer Wohnorte.
 ```SQL
-
+SELECT DISTINCT ort FROM person;
 ```
-```SQL
-
+```
++----------------+
+| ort            |
++----------------+
+| Arnsberg       |
+| Augsburg       |
+| Berlin         |
+| Espoo          |
+| Forssa         |
+| Almere         |
+| Bergen op Zoom |
+| Klagenfurt     |
++----------------+
 ```
 
 4. Lassen Sie sich in der angegebenen Reihenfolge den Vornamen, den Nachnamen, die Postleitzahl und den Wohnort aller Personen ausgeben. Sortieren Sie Nachname und Vorname in alphabetischer Reihenfolge.
