@@ -437,20 +437,46 @@ FROM person;
 +--------------------+-----------------------+
 ```
 
-2. Ermitteln Sie die Länge aller Ortsnamen und geben Sie Ortsnamen und Länge in einer Ergebnistabelle aus. Nennen Sie die Spalten der Ergebnistabelle «Ortsname» und «Ortsnamenlänge». Unterdrücken Sie die Mehrfachanzeige identischer Ortsangaben.
+2. Ermitteln Sie die Länge aller Ortsnamen und geben Sie Ortsnamen und Länge in einer Ergebnistabelle aus. Nennen Sie die Spalten der Ergebnistabelle Ortsname und Ortsnamenlänge. Unterdrücken Sie die Mehrfachanzeige identischer Ortsangaben.
 ```SQL
-
+SELECT ort AS Ortsname, LENGTH(ort) AS Ortsnamenlänge
+FROM person;
 ```
-```SQL
-
+```
++----------------+-----------------+
+| Ortsname       | Ortsnamenlänge  |
++----------------+-----------------+
+| Arnsberg       |               8 |
+| Augsburg       |               8 |
+| Berlin         |               6 |
+| Espoo          |               5 |
+| Forssa         |               6 |
+| Almere         |               6 |
+| Bergen op Zoom |              14 |
+| Klagenfurt     |              10 |
+| Klagenfurt     |              10 |
++----------------+-----------------+
 ```
 
 3. Ermitteln Sie das Alter aller Personen der Tabelle 'person'. Lassen Sie sich das Alter, den Vornamen, den Nachnamen und das Geburtsdatum jeder Person anzeigen. Nennen Sie die Spalte der Ergebnistabelle, die die Altersangaben enthält, Lebensalter.
 ```SQL
-
+SELECT vorname AS Vorname, nachname AS Nachname, geburtsdatum AS Geburtsdatum, TIMESTAMPDIFF(YEAR, geburtsdatum, CURDATE()) AS Lebensalter
+FROM person;
 ```
-```SQL
-
+```
++---------+---------------+--------------+-------------+
+| Vorname | Nachname      | Geburtsdatum | Lebensalter |
++---------+---------------+--------------+-------------+
+| Ulrich  | Blotzek       | 1960-10-05   |          63 |
+| Peter   | Schatter      | 1980-01-01   |          44 |
+| Albert  | Wojack        | 1955-06-15   |          68 |
+| Veera   | Virtanen      | 1992-12-30   |          31 |
+| Ahvo    | Hämäläinen    | 1977-04-23   |          46 |
+| Fenna   | Huisman       | 1971-08-17   |          52 |
+| Lieke   | Prins         | 1987-05-08   |          36 |
+| Paula   | David         | 1970-01-21   |          54 |
+| Joseph  | Hardiff       | 1962-08-09   |          61 |
++---------+---------------+--------------+-------------+
 ```
 
 ## 7. Abfragen mit Gruppierung von Datenmengen
