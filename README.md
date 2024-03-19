@@ -72,3 +72,33 @@
 1. Geben Sie in jeweils einer Spalte einer Ergebnistabelle den Namen einer Person bestehend aus Vornamen und Nachnamen sowie die Anschrift bestehend aus Postleitzahl und Ort aus. Fügen Sie in der Ausgabe zwischen Vornamen und Nachnamen sowie zwischen Postleitzahl und Ort ein Leerzeichen ein. Nennen Sie die Spalten der Ergebnistabelle Name und Anschrift.
 2. Ermitteln Sie die Länge aller Ortsnamen und geben Sie Ortsnamen und Länge in einer Ergebnistabelle aus. Nennen Sie die Spalten der Ergebnistabelle «Ortsname» und «Ortsnamenlänge». Unterdrücken Sie die Mehrfachanzeige identischer Ortsangaben.
 3. Ermitteln Sie das Alter aller Personen der Tabelle 'person'. Lassen Sie sich das Alter, den Vornamen, den Nachnamen und das Geburtsdatum jeder Person anzeigen. Nennen Sie die Spalte der Ergebnistabelle, die die Altersangaben enthält, Lebensalter.
+
+
+## 7. Abfragen mit Gruppierung von Datenmengen
+
+#### Aus allen Bestellungen der Tabelle 'bestellung' die Anzahl der Bestellungen für jeden Artikel und die daraus resultierende Gesamtbestellsumme pro Artikel ermitteln. Nur Gesamtbestellsummen, die größer als 200 sind, dabei berücksichtigen. Artikelnummer, die Anzahl der Bestellungen eines Artikels sowie die Gesamtbestellsumme anzeigen lassen. Die Spalten der Ergebnistabelle Artikelnummer, Artikelanzahl und Gesamtbestellsumme nennen. Gruppierung nutzen.
+
+#### Aus allen Artikeln der Tabelle 'artikel' den Durchschnittspreis aller Artikel eines Herstellers ermitteln. Nur die Hersteller, die mehrere Artikel anbieten, dabei berücksichtigen. Die Herstellernummer und den Durchschnittspreis anzeigen lassen. Die Spalten der Ergebnistabelle Herstellernummer und Durchschnittspreis nennen. Gruppierung nutzen.
+
+
+## 8. Abfragen über mehrere Tabellen und Unterabfragen erstellen
+
+#### Abfragen mit den Tabellen 'artikel' und 'hersteller'.
+
+1. Lassen Sie sich alle Artikelnamen und alle dazugehörigen Informationen über den Artikelhersteller, sortiert nach Artikelnamen, anzeigen. Benutzen Sie zur Tabellenverknüpfung die WHERE-Klausel. Benutzen Sie außerdem den Aliasnamen a für die Tabelle 'artikel' und den Aliasnamen h für die Tabelle 'hersteller'.
+2. Lassen Sie sich alle Namen, Preise und die zugehörigen Hersteller für Artikel anzeigen, deren Preis höher als 200 ist. Nutzen Sie für die Tabellenverknüpfung die JOIN-Klausel. Benutzen Sie außerdem den Aliasnamen a für die Tabelle 'artikel' und den Aliasnamen h für die Tabelle 'hersteller'.
+
+#### Abfragen mit den Tabellen 'person', 'artikel', 'hersteller' und 'bestellung'.
+
+3. Lassen Sie sich zu jedem Bestellvorgang in der angegebenen Reihenfolge folgende Daten anzeigen: Bestellnummer, Nachname und Vorname des Kunden, Artikelanzahl und Bestellsumme.
+4. Welche Kunden haben mehr als 2 Artikel bestellt? Lassen Sie sich die Bestellnummer, Vor- und Nachname des Kunden, Artikelname, Artikelanzahl und Artikelpreis anzeigen.
+5. Welche Kunden haben Artikel bestellt, die in Japan hergestellt werden? Lassen Sie sich Nachname und Vorname des Kunden, Artikelname, Herstellername sowie das Herstellerland anzeigen.
+6. Überprüfen Sie, ob Kunden aus Forssa Geräte von einem Hersteller aus Japan bestellt haben. Lassen Sie sich Nachname, Vorname und Wohnort des Kunden, den Artikelnamen sowie das Herstellerland anzeigen.
+7. Lassen Sie sich die vollständigen Daten aller Kunden anzeigen, die einen Artikel
+vom Hersteller Logitech bestellt haben.
+
+#### Abfragen mithilfe von Unterabfragen.
+
+1. Ermitteln Sie aus der Tabelle 'person' den Nachnamen und das Geburtsdatum der jüngsten Person. Nennen Sie die Spalten der Ergebnistabelle Name und Geburtsdatum.
+2. Ermitteln Sie aus der Tabelle 'artikel' den Namen und den Preis des billigsten Artikels. Nennen Sie die Spalten der Ergebnistabelle Artikel und Preis.
+3. Ermitteln Sie mithilfe der Tabellen 'bestellung', 'artikel' und 'person' die Bestellung mit der höchsten Bestellsumme. Lassen Sie sich den dazugehörigen Nachnamen des Kunden, den Artikelnamen und die Bestellsumme anzeigen. Nennen Sie die Spalten der Ergebnistabelle Name, Artikel und Bestellsumme.
