@@ -10,7 +10,7 @@
 8. Abfragen über mehrere Tabellen und Unterabfragen erstellen
 
 ### Tabelle person
-| `personennummer` | `nachname`      | `vorname` | `strasse`            | `ort`            | `plz`   | `land`        | `geburtsdatum` |
+|`personennummer`| `nachname`    |`vorname`| `strasse`          | `ort`          | `plz` | `land`      |`geburtsdatum`|
 |----------------|---------------|---------|--------------------|----------------|-------|-------------|--------------|
 |              1 | Blotzek       | Ulrich  | Großkopf 4         | Arnsberg       | 59823 | Deutschland | 1960-10-05   |
 |              2 | Schatter      | Peter   | Försterstrasse 56  | Augsburg       | 86179 | Deutschland | 1980-01-01   |
@@ -23,6 +23,14 @@
 |              9 | Hardiff       | Joseph  | Bischofstrasse 139 | Klagenfurt     |  9200 | Österreich  | 1962-08-09   |
 
 
+### Tabelle hersteller
+|`herstellernummer`| `herstellername`|   `land`    |
+|------------------|-----------------|-------------|
+|               10 | Logitech        | Schweiz     |
+|               20 | SONY            | Japan       |
+|               30 | Maxtor          | USA         |
+|               40 | Medion          | Deutschland |
+|               50 | Hewlett Packard | USA         |
 
 
 ## 1. Abfragen erstellen
