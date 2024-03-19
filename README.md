@@ -55,6 +55,25 @@
 #### Abfragen mit der Tabelle 'person' aus.
 
 1. Lassen Sie sich alle Personendaten anzeigen.
+```SQL
+SELECT * FROM person;
+```
+```SQL
++----------------+---------------+---------+--------------------+----------------+-------+-------------+--------------+
+| personennummer | nachname      | vorname | strasse            | ort            | plz   | land        | geburtsdatum |
++----------------+---------------+---------+--------------------+----------------+-------+-------------+--------------+
+|              1 | Blotzek       | Ulrich  | Großkopf 4         | Arnsberg       | 59823 | Deutschland | 1960-10-05   |
+|              2 | Schatter      | Peter   | Försterstrasse 56  | Augsburg       | 86179 | Deutschland | 1980-01-01   |
+|              3 | Wojack        | Albert  | Westendstrasse 92  | Berlin         | 12234 | Deutschland | 1955-06-15   |
+|              4 | Virtanen      | Veera   | Oyi Keilasatama 21 | Espoo          |  2150 | Finnland    | 1992-12-30   |
+|              5 | Hämäläinen    | Ahvo    | Tapulikuja 56      | Forssa         | 30100 | Finnland    | 1977-04-23   |
+|              6 | Huisman       | Fenna   | Spoordreef 87      | Almere         |  1315 | Niederlande | 1971-08-17   |
+|              7 | Prins         | Lieke   | Noordgeest 21      | Bergen op Zoom |  4600 | Niederlande | 1987-05-08   |
+|              8 | David         | Paula   | Murielstrasse 47   | Klagenfurt     |  9020 | Österreich  | 1970-01-21   |
+|              9 | Hardiff       | Joseph  | Bischofstrasse 139 | Klagenfurt     |  9200 | Österreich  | 1962-08-09   |
++----------------+---------------+---------+--------------------+----------------+-------+-------------+--------------+
+```
+
 2. Lassen Sie sich in der angegebenen Reihenfolge den Vornamen, den Nachnamen, das Geburtsdatum und den Wohnort aller Personen anzeigen.
 3. Lassen Sie sich alle Wohnorte anzeigen. Unterdrücken Sie dabei die Mehrfachanzeige identischer Wohnorte.
 4. Lassen Sie sich in der angegebenen Reihenfolge den Vornamen, den Nachnamen, die Postleitzahl und den Wohnort aller Personen ausgeben. Sortieren Sie Nachname und Vorname in alphabetischer Reihenfolge.
