@@ -202,18 +202,36 @@ WHERE ort = 'Berlin' OR ort = 'Klagenfurt';
 
 3. Lassen Sie sich die Vornamen, Nachnamen und Wohnorte aller Personen anzeigen, die nicht in Berlin wohnen.
 ```SQL
-
+SELECT vorname, nachname, ort FROM person
+WHERE NOT ort = 'Berlin';
 ```
-```SQL
-
+```
++---------+---------------+----------------+
+| vorname | nachname      | ort            |
++---------+---------------+----------------+
+| Ulrich  | Blotzek       | Arnsberg       |
+| Peter   | Schatter      | Augsburg       |
+| Veera   | Virtanen      | Espoo          |
+| Ahvo    | Hämäläinen    | Forssa         |
+| Fenna   | Huisman       | Almere         |
+| Lieke   | Prins         | Bergen op Zoom |
+| Paula   | David         | Klagenfurt     |
+| Joseph  | Hardiff       | Klagenfurt     |
++---------+---------------+----------------+
 ```
 
 4. Lassen Sie sich die Nachnamen, Wohnorte und Geburtsdaten aller Personen anzeigen, die in Deutschland wohnen und nach dem 01.06.1960 geboren worden sind.
 ```SQL
-
+SELECT nachname, ort, geburtsdatum FROM person
+WHERE land = 'Deutschland' AND geburtsdatum > '1960-06-01';
 ```
-```SQL
-
+```
++----------+----------+--------------+
+| nachname | ort      | geburtsdatum |
++----------+----------+--------------+
+| Blotzek  | Arnsberg | 1960-10-05   |
+| Schatter | Augsburg | 1980-01-01   |
++----------+----------+--------------+
 ```
 
 ## 4. Abfragen mit mathematischen und statischen Funktionen anwenden
