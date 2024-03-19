@@ -17,7 +17,7 @@
 ```SQL
 SELECT * FROM person;
 ```
-```SQL
+```
 +----------------+---------------+---------+--------------------+----------------+-------+-------------+--------------+
 | personennummer | nachname      | vorname | strasse            | ort            | plz   | land        | geburtsdatum |
 +----------------+---------------+---------+--------------------+----------------+-------+-------------+--------------+
@@ -35,10 +35,22 @@ SELECT * FROM person;
 
 2. Lassen Sie sich in der angegebenen Reihenfolge den Vornamen, den Nachnamen, das Geburtsdatum und den Wohnort aller Personen anzeigen.
 ```SQL
-
+SELECT vorname, nachname, geburtsdatum, ort FROM person;
 ```
-```SQL
-
+```
++---------+---------------+--------------+----------------+
+| vorname | nachname      | geburtsdatum | ort            |
++---------+---------------+--------------+----------------+
+| Ulrich  | Blotzek       | 1960-10-05   | Arnsberg       |
+| Peter   | Schatter      | 1980-01-01   | Augsburg       |
+| Albert  | Wojack        | 1955-06-15   | Berlin         |
+| Veera   | Virtanen      | 1992-12-30   | Espoo          |
+| Ahvo    | Hämäläinen    | 1977-04-23   | Forssa         |
+| Fenna   | Huisman       | 1971-08-17   | Almere         |
+| Lieke   | Prins         | 1987-05-08   | Bergen op Zoom |
+| Paula   | David         | 1970-01-21   | Klagenfurt     |
+| Joseph  | Hardiff       | 1962-08-09   | Klagenfurt     |
++---------+---------------+--------------+----------------+
 ```
 
 3. Lassen Sie sich alle Wohnorte anzeigen. Unterdrücken Sie dabei die Mehrfachanzeige identischer Wohnorte.
