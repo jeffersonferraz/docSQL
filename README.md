@@ -9,7 +9,7 @@
 7. Abfragen mit Gruppierung von Datenmengen
 8. Abfragen über mehrere Tabellen und Unterabfragen erstellen
 
-
+### Tabelle person
 | `personennummer` | `nachname`      | `vorname` | `strasse`            | `ort`            | `plz`   | `land`        | `geburtsdatum` |
 |----------------|---------------|---------|--------------------|----------------|-------|-------------|--------------|
 |              1 | Blotzek       | Ulrich  | Großkopf 4         | Arnsberg       | 59823 | Deutschland | 1960-10-05   |
