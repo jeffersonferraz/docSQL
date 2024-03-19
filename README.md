@@ -288,10 +288,16 @@ WHERE herstellernummer = 10;
 
 4. Ermitteln Sie den Gesamtpreis, wenn Sie jeweils 5 Artikel des Herstellers mit der Herstellernummer 10 kaufen würden. Nennen Sie die Tabellenspalte der Ergebnistabelle Gesamtpreis.
 ```SQL
-
+SELECT SUM(preis * 5) AS Gesamtpreis
+FROM artikel
+WHERE herstellernummer = 10;
 ```
-```SQL
-
+```
++-------------+
+| Gesamtpreis |
++-------------+
+|      150.00 |
++-------------+
 ```
 
 5. Ermitteln Sie den billigsten und den teuersten Artikel. Nennen Sie die Tabellenspalten der Ergebnistabelle Billig und Teuer.
