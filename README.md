@@ -120,18 +120,35 @@ FROM person;
 
 1. Lassen Sie sich alle Artikeldaten anzeigen.
 ```SQL
-
+SELECT * FROM artikel;
 ```
-```SQL
-
+```
++---------------+------------------+-------------+--------+
+| artikelnummer | herstellernummer | artikelname | preis  |
++---------------+------------------+-------------+--------+
+|             1 |               10 | Maus        |  10.00 |
+|             2 |               10 | Tastatur    |  20.00 |
+|             3 |               50 | Drucker     | 300.00 |
+|             4 |               30 | Festplatte  | 400.00 |
+|             5 |               20 | Monitor     | 500.00 |
++---------------+------------------+-------------+--------+
 ```
 
 2. Lassen Sie sich alle Artikelnamen, die dazugehörigen Preise (Netto) und die Preise mit einem Aufschlag von 19% (Brutto) anzeigen. Benennen Sie in der Ausgabe die entsprechenden Tabellenspalten Artikel, Nettopreis und Bruttopreis.
 ```SQL
-
+SELECT artikelname AS Artikel, preis AS Nettopreis, preis + (preis * 19/100) AS Bruttopreis
+FROM artikel;
 ```
-```SQL
-
+```
++------------+------------+-------------+
+| Artikel    | Nettopreis | Bruttopreis |
++------------+------------+-------------+
+| Maus       |      10.00 |   11.900000 |
+| Tastatur   |      20.00 |   23.800000 |
+| Drucker    |     300.00 |  357.000000 |
+| Festplatte |     400.00 |  476.000000 |
+| Monitor    |     500.00 |  595.000000 |
++------------+------------+-------------+
 ```
 
 3. Welche Bestellsumme pro Artikel entsteht, wenn Sie von jedem Artikel 50 Stück bestellen. Lassen Sie sich Artikelname, Einzelpreis und Gesamtpreis anzeigen. Benennen Sie die entsprechenden Tabellenspalten Artikel, Einzelpreis, Gesamtpreis.
