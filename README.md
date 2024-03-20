@@ -460,7 +460,7 @@ FROM person;
 
 3. Ermitteln Sie das Alter aller Personen der Tabelle 'person'. Lassen Sie sich das Alter, den Vornamen, den Nachnamen und das Geburtsdatum jeder Person anzeigen. Nennen Sie die Spalte der Ergebnistabelle, die die Altersangaben enthält, Lebensalter.
 ```SQL
-SELECT vorname AS Vorname, nachname AS Nachname, geburtsdatum AS Geburtsdatum, TIMESTAMPDIFF(YEAR, geburtsdatum, CURDATE()) AS Lebensalter
+SELECT vorname AS Vorname, nachname AS Nachname, geburtsdatum AS Geburtsdatum, TIMESTAMPDIFF(YEAR, geburtsdatum, CURRENT_DATE()) AS Lebensalter
 FROM person;
 ```
 ```
