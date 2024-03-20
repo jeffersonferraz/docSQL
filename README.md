@@ -483,9 +483,12 @@ FROM person;
 
 #### Aus allen Bestellungen der Tabelle 'bestellung' die Anzahl der Bestellungen für jeden Artikel und die daraus resultierende Gesamtbestellsumme pro Artikel ermitteln. Nur Gesamtbestellsummen, die größer als 200 sind, dabei berücksichtigen. Artikelnummer, die Anzahl der Bestellungen eines Artikels sowie die Gesamtbestellsumme anzeigen lassen. Die Spalten der Ergebnistabelle Artikelnummer, Artikelanzahl und Gesamtbestellsumme nennen. Gruppierung nutzen.
 ```SQL
-
+SELECT artikelnummer AS Artikelnummer, artikelanzahl AS Artikelanzahl, bestellsumme AS Gesamtbestellsumme
+FROM bestellung
+WHERE bestellsumme > 200
+GROUP BY artikelnummer;
 ```
-```SQL
+```
 
 ```
 
