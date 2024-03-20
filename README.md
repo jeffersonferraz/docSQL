@@ -500,10 +500,17 @@ HAVING SUM(bestellsumme) > 200;
 
 #### Aus allen Artikeln der Tabelle 'artikel' den Durchschnittspreis aller Artikel eines Herstellers ermitteln. Nur die Hersteller, die mehrere Artikel anbieten, dabei berücksichtigen. Die Herstellernummer und den Durchschnittspreis anzeigen lassen. Die Spalten der Ergebnistabelle Herstellernummer und Durchschnittspreis nennen. Gruppierung nutzen.
 ```SQL
-
+SELECT herstellernummer AS Herstellernummer, ROUND(AVG(preis), 2) AS Durchschnittspreis
+FROM artikel
+GROUP BY herstellernummer
+HAVING COUNT(*) > 1;
 ```
 ```
-
++------------------+--------------------+
+| Herstellernummer | Durchschnittspreis |
++------------------+--------------------+
+|               10 |              15.00 |
++------------------+--------------------+
 ```
 
 ## 8. Abfragen über mehrere Tabellen und Unterabfragen erstellen
