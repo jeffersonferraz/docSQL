@@ -1,4 +1,7 @@
-# SQL Doc
+# SQL_Aufgaben Doc
+
+Aufgaben mit Lösungen und entsprechenden Terminalausgaben. 
+<br><br>
 
 1. [Abfragen erstellen](#1-abfragen-erstellen)
 2. [Abfragen mit einfachen Aggregat-Funktionen](#2-abfragen-mit-einfachen-aggregat-funktionen)
@@ -8,6 +11,7 @@
 6. [Abfragen mit Zeichenketten- und Datumsfunktion](#6-abfragen-mit-zeichenketten--und-datumsfunktion)
 7. [Abfragen mit Gruppierung von Datenmengen](#7-abfragen-mit-gruppierung-von-datenmengen)
 8. [Abfragen über mehrere Tabellen und Unterabfragen erstellen](#8-abfragen-über-mehrere-tabellen-und-unterabfragen-erstellen)
+<br>
 
 ## Datentabellen
 
@@ -51,7 +55,7 @@
 |             4 |             3 |            3 |             1 |       300.00 |
 |             5 |             5 |            5 |             5 |      2500.00 |
 
-
+<br><br>
 
 ## 1. Abfragen erstellen
 
