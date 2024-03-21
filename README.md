@@ -539,10 +539,21 @@ ORDER BY h.herstellernummer;
 
 2. Lassen Sie sich alle Namen, Preise und die zugehörigen Hersteller für Artikel anzeigen, deren Preis höher als 200 ist. Nutzen Sie für die Tabellenverknüpfung die JOIN-Klausel. Benutzen Sie außerdem den Aliasnamen a für die Tabelle 'artikel' und den Aliasnamen h für die Tabelle 'hersteller'.
 ```SQL
-
+SELECT a.artikelname AS Artikelname, h.herstellernummer AS Herstellernummer, h.herstellername AS Hersteller, h.land AS Herstellungsland, a.preis AS Preis
+FROM hersteller AS h
+INNER JOIN artikel AS a ON h.herstellernummer = a.herstellernummer
+WHERE a.preis > 200
+GROUP BY a.artikelname, a.preis, h.herstellernummer
+ORDER BY h.herstellernummer;
 ```
-```SQL
-
+```
++-------------+------------------+-----------------+------------------+--------+
+| Artikelname | Herstellernummer | Hersteller      | Herstellungsland | Preis  |
++-------------+------------------+-----------------+------------------+--------+
+| Monitor     |               20 | SONY            | Japan            | 500.00 |
+| Festplatte  |               30 | Maxtor          | USA              | 400.00 |
+| Drucker     |               50 | Hewlett Packard | USA              | 300.00 |
++-------------+------------------+-----------------+------------------+--------+
 ```
 
 #### Abfragen mit den Tabellen 'person', 'artikel', 'hersteller' und 'bestellung'.
