@@ -519,12 +519,22 @@ HAVING COUNT(*) > 1;
 
 1. Lassen Sie sich alle Artikelnamen und alle dazugehörigen Informationen über den Artikelhersteller, sortiert nach Artikelnamen, anzeigen. Benutzen Sie zur Tabellenverknüpfung die WHERE-Klausel. Benutzen Sie außerdem den Aliasnamen a für die Tabelle 'artikel' und den Aliasnamen h für die Tabelle 'hersteller'.
 ```SQL
-SELECT artikelname AS Artikelname, ROUND(AVG(preis), 2) AS Durchschnittspreis
-FROM artikel AS a
-INNER JOIN hersteller AS h ON a.herstellernummer = h.herstellernummer;
+SELECT a.artikelname AS Artikelname, h.herstellernummer AS Herstellernummer, h.herstellername AS Hersteller, h.land AS Herstellungsland
+FROM artikel AS a, hersteller AS h
+WHERE h.herstellernummer = a.herstellernummer
+GROUP BY a.artikelname, h.herstellernummer
+ORDER BY h.herstellernummer;
 ```
 ```
-
++-------------+------------------+-----------------+------------------+
+| Artikelname | Herstellernummer | Hersteller      | Herstellungsland |
++-------------+------------------+-----------------+------------------+
+| Maus        |               10 | Logitech        | Schweiz          |
+| Tastatur    |               10 | Logitech        | Schweiz          |
+| Monitor     |               20 | SONY            | Japan            |
+| Festplatte  |               30 | Maxtor          | USA              |
+| Drucker     |               50 | Hewlett Packard | USA              |
++-------------+------------------+-----------------+------------------+
 ```
 
 2. Lassen Sie sich alle Namen, Preise und die zugehörigen Hersteller für Artikel anzeigen, deren Preis höher als 200 ist. Nutzen Sie für die Tabellenverknüpfung die JOIN-Klausel. Benutzen Sie außerdem den Aliasnamen a für die Tabelle 'artikel' und den Aliasnamen h für die Tabelle 'hersteller'.
