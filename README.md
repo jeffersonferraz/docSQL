@@ -659,26 +659,45 @@ WHERE h.herstellername = 'Logitech';
 
 1. Ermitteln Sie aus der Tabelle 'person' den Nachnamen und das Geburtsdatum der jüngsten Person. Nennen Sie die Spalten der Ergebnistabelle Name und Geburtsdatum.
 ```SQL
-
+SELECT nachname AS Nachname, vorname AS Vorname, geburtsdatum AS Geburtsdatum
+FROM person
+WHERE geburtsdatum = (SELECT MAX(geburtsdatum) FROM person);
 ```
 ```
-
++----------+---------+--------------+
+| Nachname | Vorname | Geburtsdatum |
++----------+---------+--------------+
+| Virtanen | Veera   | 1992-12-30   |
++----------+---------+--------------+
 ```
 
 2. Ermitteln Sie aus der Tabelle 'artikel' den Namen und den Preis des billigsten Artikels. Nennen Sie die Spalten der Ergebnistabelle Artikel und Preis.
 ```SQL
-
+SELECT artikelname AS Artikel, preis AS Preis
+FROM artikel
+WHERE preis = (SELECT MIN(preis) FROM artikel);
 ```
 ```
-
++---------+-------+
+| Artikel | Preis |
++---------+-------+
+| Maus    | 10.00 |
++---------+-------+
 ```
 
 3. Ermitteln Sie mithilfe der Tabellen 'bestellung', 'artikel' und 'person' die Bestellung mit der höchsten Bestellsumme. Lassen Sie sich den dazugehörigen Nachnamen des Kunden, den Artikelnamen und die Bestellsumme anzeigen. Nennen Sie die Spalten der Ergebnistabelle Name, Artikel und Bestellsumme.
 ```SQL
-
+SELECT p.nachname AS Name, a.artikelname AS Artikel, b.bestellsumme AS Bestellsumme FROM person AS p
+INNER JOIN bestellung AS b ON b.kundennummer = p.personennummer
+INNER JOIN artikel AS a ON b.artikelnummer = a.artikelnummer
+WHERE b.bestellsumme = (SELECT MAX(bestellsumme) FROM bestellung);
 ```
 ```
-
++---------------+---------+--------------+
+| Name          | Artikel | Bestellsumme |
++---------------+---------+--------------+
+| Hämäläinen    | Monitor |      2500.00 |
++---------------+---------+--------------+
 ```
 
 
