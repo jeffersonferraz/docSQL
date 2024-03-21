@@ -1,6 +1,6 @@
 # SQL Doc
 
-1. Abfragen erstellen
+1. [Abfragen erstellen](https://github.com/jeffersonferraz/docSQL?tab=readme-ov-file#1-abfragen-erstellen)
 2. Abfragen mit einfachen Aggregat-Funktionen
 3. Abfragen mit logischen Operatoren
 4. Abfragen mit mathematischen und statischen Funktionen anwenden
