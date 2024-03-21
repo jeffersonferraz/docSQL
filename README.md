@@ -637,10 +637,22 @@ WHERE p.ort = 'Forssa' AND h.land = 'Japan';
 7. Lassen Sie sich die vollständigen Daten aller Kunden anzeigen, die einen Artikel
 vom Hersteller Logitech bestellt haben.
 ```SQL
-
+SELECT p.* FROM person AS p
+INNER JOIN bestellung AS b ON b.kundennummer = p.personennummer
+INNER JOIN artikel AS a ON b.artikelnummer = a.artikelnummer
+INNER JOIN hersteller AS h ON a.herstellernummer
+WHERE h.herstellername = 'Logitech';
 ```
 ```
-
++----------------+---------------+---------+--------------------+----------+-------+-------------+--------------+
+| personennummer | nachname      | vorname | strasse            | ort      | plz   | land        | geburtsdatum |
++----------------+---------------+---------+--------------------+----------+-------+-------------+--------------+
+|              4 | Virtanen      | Veera   | Oyi Keilasatama 21 | Espoo    |  2150 | Finnland    | 1992-12-30   |
+|              1 | Blotzek       | Ulrich  | Großkopf 4         | Arnsberg | 59823 | Deutschland | 1960-10-05   |
+|              2 | Schatter      | Peter   | Försterstrasse 56  | Augsburg | 86179 | Deutschland | 1980-01-01   |
+|              3 | Wojack        | Albert  | Westendstrasse 92  | Berlin   | 12234 | Deutschland | 1955-06-15   |
+|              5 | Hämäläinen    | Ahvo    | Tapulikuja 56      | Forssa   | 30100 | Finnland    | 1977-04-23   |
++----------------+---------------+---------+--------------------+----------+-------+-------------+--------------+
 ```
 
 #### Abfragen mithilfe von Unterabfragen.
