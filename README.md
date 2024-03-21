@@ -560,10 +560,10 @@ ORDER BY h.herstellernummer;
 
 3. Lassen Sie sich zu jedem Bestellvorgang in der angegebenen Reihenfolge folgende Daten anzeigen: Bestellnummer, Nachname und Vorname des Kunden, Artikelanzahl und Bestellsumme.
 ```SQL
-SELECT bestellnummer AS Bestellnummer, nachname AS Nachname, vorname AS Vorname, artikelanzahl AS Artikelanzahl, bestellsumme AS Bestellsumme
+SELECT b.bestellnummer AS Bestellnummer, p.nachname AS Nachname, p.vorname AS Vorname, b.artikelanzahl AS Artikelanzahl, b.bestellsumme AS Bestellsumme
 FROM bestellung AS b
 INNER JOIN person AS p ON b.kundennummer = p.personennummer
-ORDER BY bestellnummer;
+ORDER BY b.bestellnummer;
 ```
 ```
 +---------------+---------------+---------+---------------+--------------+
@@ -579,15 +579,32 @@ ORDER BY bestellnummer;
 
 4. Welche Kunden haben mehr als 2 Artikel bestellt? Lassen Sie sich die Bestellnummer, Vor- und Nachname des Kunden, Artikelname, Artikelanzahl und Artikelpreis anzeigen.
 ```SQL
-
+SELECT b.bestellnummer AS Bestellnummer, p.vorname AS Vorname, p.nachname AS Nachname, b.artikelanzahl AS Artikelanzahl, a.preis AS Artikelpreis
+FROM bestellung AS b
+INNER JOIN person AS p ON b.kundennummer = p.personennummer
+INNER JOIN artikel AS a ON b.artikelnummer = a.artikelnummer
+GROUP BY b.artikelanzahl, b.bestellnummer
+HAVING b.artikelanzahl > 2
+ORDER BY b.bestellnummer;
 ```
 ```
-
++---------------+---------+---------------+---------------+--------------+
+| Bestellnummer | Vorname | Nachname      | Artikelanzahl | Artikelpreis |
++---------------+---------+---------------+---------------+--------------+
+|             3 | Peter   | Schatter      |             3 |        10.00 |
+|             5 | Ahvo    | Hämäläinen    |             5 |       500.00 |
++---------------+---------+---------------+---------------+--------------+
 ```
 
 5. Welche Kunden haben Artikel bestellt, die in Japan hergestellt werden? Lassen Sie sich Nachname und Vorname des Kunden, Artikelname, Herstellername sowie das Herstellerland anzeigen.
 ```SQL
-
+SELECT b.bestellnummer AS Bestellnummer, p.vorname AS Vorname, p.nachname AS Nachname, b.artikelanzahl AS Artikelanzahl, a.preis AS Artikelpreis
+FROM bestellung AS b
+INNER JOIN person AS p ON b.kundennummer = p.personennummer
+INNER JOIN artikel AS a ON b.artikelnummer = a.artikelnummer
+GROUP BY b.artikelanzahl, b.bestellnummer
+HAVING b.artikelanzahl > 2
+ORDER BY b.bestellnummer;
 ```
 ```
 
