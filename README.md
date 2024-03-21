@@ -560,10 +560,21 @@ ORDER BY h.herstellernummer;
 
 3. Lassen Sie sich zu jedem Bestellvorgang in der angegebenen Reihenfolge folgende Daten anzeigen: Bestellnummer, Nachname und Vorname des Kunden, Artikelanzahl und Bestellsumme.
 ```SQL
-
+SELECT bestellnummer AS Bestellnummer, nachname AS Nachname, vorname AS Vorname, artikelanzahl AS Artikelanzahl, bestellsumme AS Bestellsumme
+FROM bestellung AS b
+INNER JOIN person AS p ON b.kundennummer = p.personennummer
+ORDER BY bestellnummer;
 ```
 ```SQL
-
++---------------+---------------+---------+---------------+--------------+
+| Bestellnummer | Nachname      | Vorname | Artikelanzahl | Bestellsumme |
++---------------+---------------+---------+---------------+--------------+
+|             1 | Virtanen      | Veera   |             2 |        20.00 |
+|             2 | Blotzek       | Ulrich  |             1 |        20.00 |
+|             3 | Schatter      | Peter   |             3 |        30.00 |
+|             4 | Wojack        | Albert  |             1 |       300.00 |
+|             5 | Hämäläinen    | Ahvo    |             5 |      2500.00 |
++---------------+---------------+---------+---------------+--------------+
 ```
 
 4. Welche Kunden haben mehr als 2 Artikel bestellt? Lassen Sie sich die Bestellnummer, Vor- und Nachname des Kunden, Artikelname, Artikelanzahl und Artikelpreis anzeigen.
