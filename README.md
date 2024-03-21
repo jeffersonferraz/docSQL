@@ -565,7 +565,7 @@ FROM bestellung AS b
 INNER JOIN person AS p ON b.kundennummer = p.personennummer
 ORDER BY bestellnummer;
 ```
-```SQL
+```
 +---------------+---------------+---------+---------------+--------------+
 | Bestellnummer | Nachname      | Vorname | Artikelanzahl | Bestellsumme |
 +---------------+---------------+---------+---------------+--------------+
@@ -581,7 +581,7 @@ ORDER BY bestellnummer;
 ```SQL
 
 ```
-```SQL
+```
 
 ```
 
@@ -589,7 +589,7 @@ ORDER BY bestellnummer;
 ```SQL
 
 ```
-```SQL
+```
 
 ```
 
@@ -597,7 +597,7 @@ ORDER BY bestellnummer;
 ```SQL
 
 ```
-```SQL
+```
 
 ```
 
@@ -606,7 +606,7 @@ vom Hersteller Logitech bestellt haben.
 ```SQL
 
 ```
-```SQL
+```
 
 ```
 
@@ -616,7 +616,7 @@ vom Hersteller Logitech bestellt haben.
 ```SQL
 
 ```
-```SQL
+```
 
 ```
 
@@ -624,7 +624,7 @@ vom Hersteller Logitech bestellt haben.
 ```SQL
 
 ```
-```SQL
+```
 
 ```
 
@@ -632,7 +632,7 @@ vom Hersteller Logitech bestellt haben.
 ```SQL
 
 ```
-```SQL
+```
 
 ```
 
