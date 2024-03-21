@@ -1,4 +1,4 @@
-# SQL_Aufgaben Doc
+# SQL Aufgaben Doc
 
 Aufgaben mit Lösungen und entsprechenden Terminalausgaben. 
 <br><br>
