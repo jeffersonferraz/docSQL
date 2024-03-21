@@ -1,13 +1,13 @@
 # SQL Doc
 
-1. [Abfragen erstellen](#1-abfragen-erstellen)
-2. [Abfragen mit einfachen Aggregat-Funktionen](#2-abfragen-mit-einfachen-aggregat-funktionen)
-3. [Abfragen mit logischen Operatoren](#3-abfragen-mit-logischen-operatoren)
-4. [Abfragen mit mathematischen und statischen Funktionen anwenden](#4-abfragen-mit-mathematischen-und-statischen-funktionen-anwenden)
-5. [Abfragen mit dem Vergleich von Zeichenketten](#5-abfragen-mit-dem-vergleich-von-zeichenketten)
-6. [Abfragen mit Zeichenketten- und Datumsfunktion](#6-abfragen-mit-zeichenketten--und-datumsfunktion)
-7. [Abfragen mit Gruppierung von Datenmengen](#7-abfragen-mit-gruppierung-von-datenmengen)
-8. [Abfragen über mehrere Tabellen und Unterabfragen erstellen](#8-abfragen-über-mehrere-tabellen-und-unterabfragen-erstellen)
+__1. [Abfragen erstellen](#1-abfragen-erstellen)__
+__2. [Abfragen mit einfachen Aggregat-Funktionen](#2-abfragen-mit-einfachen-aggregat-funktionen)__
+__3. [Abfragen mit logischen Operatoren](#3-abfragen-mit-logischen-operatoren)__
+__4. [Abfragen mit mathematischen und statischen Funktionen anwenden](#4-abfragen-mit-mathematischen-und-statischen-funktionen-anwenden)__
+__5. [Abfragen mit dem Vergleich von Zeichenketten](#5-abfragen-mit-dem-vergleich-von-zeichenketten)__
+__6. [Abfragen mit Zeichenketten- und Datumsfunktion](#6-abfragen-mit-zeichenketten--und-datumsfunktion)__
+__7. [Abfragen mit Gruppierung von Datenmengen](#7-abfragen-mit-gruppierung-von-datenmengen)__
+__8. [Abfragen über mehrere Tabellen und Unterabfragen erstellen](#8-abfragen-über-mehrere-tabellen-und-unterabfragen-erstellen)__
 
 ## 1. Abfragen erstellen
 
