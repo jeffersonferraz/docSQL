@@ -1,13 +1,13 @@
 # SQL Doc
 
 1. [Abfragen erstellen](#1-abfragen-erstellen)
-2. Abfragen mit einfachen Aggregat-Funktionen
-3. Abfragen mit logischen Operatoren
-4. Abfragen mit mathematischen und statischen Funktionen anwenden
-5. Abfragen mit dem Vergleich von Zeichenketten
-6. Abfragen mit Zeichenketten- und Datumsfunktion
-7. Abfragen mit Gruppierung von Datenmengen
-8. Abfragen über mehrere Tabellen und Unterabfragen erstellen
+2. [Abfragen mit einfachen Aggregat-Funktionen](#2)
+3. [Abfragen mit logischen Operatoren]
+4. [Abfragen mit mathematischen und statischen Funktionen anwenden]
+5. [Abfragen mit dem Vergleich von Zeichenketten]
+6. [Abfragen mit Zeichenketten- und Datumsfunktion]
+7. [Abfragen mit Gruppierung von Datenmengen]
+8. [Abfragen über mehrere Tabellen und Unterabfragen erstellen]
 
 ## 1. Abfragen erstellen
 
