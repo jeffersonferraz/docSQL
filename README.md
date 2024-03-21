@@ -598,24 +598,40 @@ ORDER BY b.bestellnummer;
 
 5. Welche Kunden haben Artikel bestellt, die in Japan hergestellt werden? Lassen Sie sich Nachname und Vorname des Kunden, Artikelname, Herstellername sowie das Herstellerland anzeigen.
 ```SQL
-SELECT b.bestellnummer AS Bestellnummer, p.vorname AS Vorname, p.nachname AS Nachname, b.artikelanzahl AS Artikelanzahl, a.preis AS Artikelpreis
+SELECT p.nachname AS Nachname, p.vorname AS Vorname, a.artikelname AS Artikelname, h.herstellername AS Herstellername, h.land AS Herstellerland
 FROM bestellung AS b
 INNER JOIN person AS p ON b.kundennummer = p.personennummer
 INNER JOIN artikel AS a ON b.artikelnummer = a.artikelnummer
-GROUP BY b.artikelanzahl, b.bestellnummer
-HAVING b.artikelanzahl > 2
-ORDER BY b.bestellnummer;
+INNER JOIN hersteller AS h ON a.herstellernummer
+WHERE h.land = 'Japan';
 ```
 ```
-
++---------------+---------+-------------+----------------+----------------+
+| Nachname      | Vorname | Artikelname | Herstellername | Herstellerland |
++---------------+---------+-------------+----------------+----------------+
+| Virtanen      | Veera   | Maus        | SONY           | Japan          |
+| Blotzek       | Ulrich  | Tastatur    | SONY           | Japan          |
+| Schatter      | Peter   | Maus        | SONY           | Japan          |
+| Wojack        | Albert  | Drucker     | SONY           | Japan          |
+| Hämäläinen    | Ahvo    | Monitor     | SONY           | Japan          |
++---------------+---------+-------------+----------------+----------------+
 ```
 
 6. Überprüfen Sie, ob Kunden aus Forssa Geräte von einem Hersteller aus Japan bestellt haben. Lassen Sie sich Nachname, Vorname und Wohnort des Kunden, den Artikelnamen sowie das Herstellerland anzeigen.
 ```SQL
-
+SELECT p.nachname AS Nachname, p.vorname AS Vorname, p.ort AS Wohnort, a.artikelname AS Artikelname, h.land AS Herstellerland
+FROM bestellung AS b
+INNER JOIN person AS p ON b.kundennummer = p.personennummer
+INNER JOIN artikel AS a ON b.artikelnummer = a.artikelnummer
+INNER JOIN hersteller AS h ON a.herstellernummer
+WHERE p.ort = 'Forssa' AND h.land = 'Japan';
 ```
 ```
-
++---------------+---------+---------+-------------+----------------+
+| Nachname      | Vorname | Wohnort | Artikelname | Herstellerland |
++---------------+---------+---------+-------------+----------------+
+| Hämäläinen    | Ahvo    | Forssa  | Monitor     | Japan          |
++---------------+---------+---------+-------------+----------------+
 ```
 
 7. Lassen Sie sich die vollständigen Daten aller Kunden anzeigen, die einen Artikel
