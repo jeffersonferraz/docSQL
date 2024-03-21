@@ -748,4 +748,8 @@ WHERE b.bestellsumme = (SELECT MAX(bestellsumme) FROM bestellung);
 +---------------+---------+--------------+
 ```
 
+### Research:
+
++ https://www.w3schools.com/mysql
++ https://www.w3schools.com/sql
 
