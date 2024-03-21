@@ -747,6 +747,7 @@ WHERE b.bestellsumme = (SELECT MAX(bestellsumme) FROM bestellung);
 | Hämäläinen    | Monitor |      2500.00 |
 +---------------+---------+--------------+
 ```
+<br>
 
 ### Research:
 
