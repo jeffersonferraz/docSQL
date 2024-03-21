@@ -519,9 +519,11 @@ HAVING COUNT(*) > 1;
 
 1. Lassen Sie sich alle Artikelnamen und alle dazugehörigen Informationen über den Artikelhersteller, sortiert nach Artikelnamen, anzeigen. Benutzen Sie zur Tabellenverknüpfung die WHERE-Klausel. Benutzen Sie außerdem den Aliasnamen a für die Tabelle 'artikel' und den Aliasnamen h für die Tabelle 'hersteller'.
 ```SQL
-
+SELECT artikelname AS Artikelname, ROUND(AVG(preis), 2) AS Durchschnittspreis
+FROM artikel AS a
+INNER JOIN hersteller AS h ON a.herstellernummer = h.herstellernummer;
 ```
-```SQL
+```
 
 ```
 
