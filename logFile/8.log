@@ -1,0 +1,139 @@
+mysql> SELECT a.artikelname AS Artikelname, h.herstellernummer AS Herstellernummer, h.herstellername AS Hersteller, h.land AS Herstellungsland
+    -> FROM artikel AS a, hersteller AS h
+    -> WHERE h.herstellernummer = a.herstellernummer
+    -> GROUP BY a.artikelname, h.herstellernummer
+    -> ORDER BY h.herstellernummer;
++-------------+------------------+-----------------+------------------+
+| Artikelname | Herstellernummer | Hersteller      | Herstellungsland |
++-------------+------------------+-----------------+------------------+
+| Maus        |               10 | Logitech        | Schweiz          |
+| Tastatur    |               10 | Logitech        | Schweiz          |
+| Monitor     |               20 | SONY            | Japan            |
+| Festplatte  |               30 | Maxtor          | USA              |
+| Drucker     |               50 | Hewlett Packard | USA              |
++-------------+------------------+-----------------+------------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT a.artikelname AS Artikelname, h.herstellernummer AS Herstellernummer, h.herstellername AS Hersteller, h.land AS Herstellungsland, a.preis AS Preis
+    -> FROM hersteller AS h
+    -> INNER JOIN artikel AS a ON h.herstellernummer = a.herstellernummer
+    -> WHERE a.preis > 200
+    -> GROUP BY a.artikelname, a.preis, h.herstellernummer
+    -> ORDER BY h.herstellernummer;
++-------------+------------------+-----------------+------------------+--------+
+| Artikelname | Herstellernummer | Hersteller      | Herstellungsland | Preis  |
++-------------+------------------+-----------------+------------------+--------+
+| Monitor     |               20 | SONY            | Japan            | 500.00 |
+| Festplatte  |               30 | Maxtor          | USA              | 400.00 |
+| Drucker     |               50 | Hewlett Packard | USA              | 300.00 |
++-------------+------------------+-----------------+------------------+--------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT b.bestellnummer AS Bestellnummer, p.nachname AS Nachname, p.vorname AS Vorname, b.artikelanzahl AS Artikelanzahl, b.bestellsumme AS Bestellsumme
+    -> FROM bestellung AS b
+    -> INNER JOIN person AS p ON b.kundennummer = p.personennummer
+    -> ORDER BY b.bestellnummer;
++---------------+---------------+---------+---------------+--------------+
+| Bestellnummer | Nachname      | Vorname | Artikelanzahl | Bestellsumme |
++---------------+---------------+---------+---------------+--------------+
+|             1 | Virtanen      | Veera   |             2 |        20.00 |
+|             2 | Blotzek       | Ulrich  |             1 |        20.00 |
+|             3 | Schatter      | Peter   |             3 |        30.00 |
+|             4 | Wojack        | Albert  |             1 |       300.00 |
+|             5 | Hämäläinen    | Ahvo    |             5 |      2500.00 |
++---------------+---------------+---------+---------------+--------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT b.bestellnummer AS Bestellnummer, p.vorname AS Vorname, p.nachname AS Nachname, b.artikelanzahl AS Artikelanzahl, a.preis AS Artikelpreis
+    -> FROM bestellung AS b
+    -> INNER JOIN person AS p ON b.kundennummer = p.personennummer
+    -> INNER JOIN artikel AS a ON b.artikelnummer = a.artikelnummer
+    -> GROUP BY b.artikelanzahl, b.bestellnummer
+    -> HAVING b.artikelanzahl > 2
+    -> ORDER BY b.bestellnummer;
++---------------+---------+---------------+---------------+--------------+
+| Bestellnummer | Vorname | Nachname      | Artikelanzahl | Artikelpreis |
++---------------+---------+---------------+---------------+--------------+
+|             3 | Peter   | Schatter      |             3 |        10.00 |
+|             5 | Ahvo    | Hämäläinen    |             5 |       500.00 |
++---------------+---------+---------------+---------------+--------------+
+2 rows in set (0.01 sec)
+
+mysql> SELECT p.nachname AS Nachname, p.vorname AS Vorname, a.artikelname AS Artikelname, h.herstellername AS Herstellername, h.land AS Herstellerland
+    -> FROM bestellung AS b
+    -> INNER JOIN person AS p ON b.kundennummer = p.personennummer
+    -> INNER JOIN artikel AS a ON b.artikelnummer = a.artikelnummer
+    -> INNER JOIN hersteller AS h ON a.herstellernummer
+    -> WHERE h.land = 'Japan';
++---------------+---------+-------------+----------------+----------------+
+| Nachname      | Vorname | Artikelname | Herstellername | Herstellerland |
++---------------+---------+-------------+----------------+----------------+
+| Virtanen      | Veera   | Maus        | SONY           | Japan          |
+| Blotzek       | Ulrich  | Tastatur    | SONY           | Japan          |
+| Schatter      | Peter   | Maus        | SONY           | Japan          |
+| Wojack        | Albert  | Drucker     | SONY           | Japan          |
+| Hämäläinen    | Ahvo    | Monitor     | SONY           | Japan          |
++---------------+---------+-------------+----------------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT p.nachname AS Nachname, p.vorname AS Vorname, p.ort AS Wohnort, a.artikelname AS Artikelname, h.land AS Herstellerland
+    -> FROM bestellung AS b
+    -> INNER JOIN person AS p ON b.kundennummer = p.personennummer
+    -> INNER JOIN artikel AS a ON b.artikelnummer = a.artikelnummer
+    -> INNER JOIN hersteller AS h ON a.herstellernummer
+    -> WHERE p.ort = 'Forssa' AND h.land = 'Japan';
++---------------+---------+---------+-------------+----------------+
+| Nachname      | Vorname | Wohnort | Artikelname | Herstellerland |
++---------------+---------+---------+-------------+----------------+
+| Hämäläinen    | Ahvo    | Forssa  | Monitor     | Japan          |
++---------------+---------+---------+-------------+----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT p.* FROM person AS p
+    -> INNER JOIN bestellung AS b ON b.kundennummer = p.personennummer
+    -> INNER JOIN artikel AS a ON b.artikelnummer = a.artikelnummer
+    -> INNER JOIN hersteller AS h ON a.herstellernummer
+    -> WHERE h.herstellername = 'Logitech';
++----------------+---------------+---------+--------------------+----------+-------+-------------+--------------+
+| personennummer | nachname      | vorname | strasse            | ort      | plz   | land        | geburtsdatum |
++----------------+---------------+---------+--------------------+----------+-------+-------------+--------------+
+|              4 | Virtanen      | Veera   | Oyi Keilasatama 21 | Espoo    |  2150 | Finnland    | 1992-12-30   |
+|              1 | Blotzek       | Ulrich  | Großkopf 4         | Arnsberg | 59823 | Deutschland | 1960-10-05   |
+|              2 | Schatter      | Peter   | Försterstrasse 56  | Augsburg | 86179 | Deutschland | 1980-01-01   |
+|              3 | Wojack        | Albert  | Westendstrasse 92  | Berlin   | 12234 | Deutschland | 1955-06-15   |
+|              5 | Hämäläinen    | Ahvo    | Tapulikuja 56      | Forssa   | 30100 | Finnland    | 1977-04-23   |
++----------------+---------------+---------+--------------------+----------+-------+-------------+--------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT nachname AS Nachname, vorname AS Vorname, geburtsdatum AS Geburtsdatum
+    -> FROM person
+    -> WHERE geburtsdatum = (SELECT MAX(geburtsdatum) FROM person);
++----------+---------+--------------+
+| Nachname | Vorname | Geburtsdatum |
++----------+---------+--------------+
+| Virtanen | Veera   | 1992-12-30   |
++----------+---------+--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT artikelname AS Artikel, preis AS Preis
+    -> FROM artikel
+    -> WHERE preis = (SELECT MIN(preis) FROM artikel);
++---------+-------+
+| Artikel | Preis |
++---------+-------+
+| Maus    | 10.00 |
++---------+-------+
+1 row in set (0.00 sec)
+
+mysql> SELECT p.nachname AS Name, a.artikelname AS Artikel, b.bestellsumme AS Bestellsumme FROM person AS p
+    -> INNER JOIN bestellung AS b ON b.kundennummer = p.personennummer
+    -> INNER JOIN artikel AS a ON b.artikelnummer = a.artikelnummer
+    -> WHERE b.bestellsumme = (SELECT MAX(bestellsumme) FROM bestellung);
++---------------+---------+--------------+
+| Name          | Artikel | Bestellsumme |
++---------------+---------+--------------+
+| Hämäläinen    | Monitor |      2500.00 |
++---------------+---------+--------------+
+1 row in set (0.00 sec)
+
+mysql> notee

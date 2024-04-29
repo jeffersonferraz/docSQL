@@ -1,0 +1,51 @@
+mysql> SELECT artikelname AS Artikel, preis AS Nettopreis, ROUND(preis + (preis * 20/100), 2) AS Neupreis
+    -> FROM artikel
+    -> WHERE preis > 300 ;
++------------+------------+----------+
+| Artikel    | Nettopreis | Neupreis |
++------------+------------+----------+
+| Festplatte |     400.00 |   480.00 |
+| Monitor    |     500.00 |   600.00 |
++------------+------------+----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT AVG(preis) AS Durchschnittspreis
+    -> FROM artikel
+    -> WHERE artikelname = 'Tastatur' OR artikelname = 'Drucker' OR artikelname = 'Festplatte';
++--------------------+
+| Durchschnittspreis |
++--------------------+
+|         240.000000 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(artikelnummer) AS Artikelanzahl
+    -> FROM artikel
+    -> WHERE herstellernummer = 10;
++---------------+
+| Artikelanzahl |
++---------------+
+|             2 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT SUM(preis * 5) AS Gesamtpreis
+    -> FROM artikel
+    -> WHERE herstellernummer = 10;
++-------------+
+| Gesamtpreis |
++-------------+
+|      150.00 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MIN(preis) AS Billig, MAX(preis) AS Teuer
+    -> FROM artikel;
++--------+--------+
+| Billig | Teuer  |
++--------+--------+
+|  10.00 | 500.00 |
++--------+--------+
+1 row in set (0.00 sec)
+
+mysql> notee

@@ -1,0 +1,52 @@
+mysql> SELECT CONCAT(vorname, ' ', nachname) AS Name, CONCAT(plz, ' - ', ort) AS Anschrift
+    -> FROM person;
++--------------------+-----------------------+
+| Name               | Anschrift             |
++--------------------+-----------------------+
+| Ulrich Blotzek     | 59823 - Arnsberg      |
+| Peter Schatter     | 86179 - Augsburg      |
+| Albert Wojack      | 12234 - Berlin        |
+| Veera Virtanen     | 2150 - Espoo          |
+| Ahvo Hämäläinen    | 30100 - Forssa        |
+| Fenna Huisman      | 1315 - Almere         |
+| Lieke Prins        | 4600 - Bergen op Zoom |
+| Paula David        | 9020 - Klagenfurt     |
+| Joseph Hardiff     | 9200 - Klagenfurt     |
++--------------------+-----------------------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT ort AS Ortsname, LENGTH(ort) AS Ortsnamenlänge
+    -> FROM person;
++----------------+-----------------+
+| Ortsname       | Ortsnamenlänge  |
++----------------+-----------------+
+| Arnsberg       |               8 |
+| Augsburg       |               8 |
+| Berlin         |               6 |
+| Espoo          |               5 |
+| Forssa         |               6 |
+| Almere         |               6 |
+| Bergen op Zoom |              14 |
+| Klagenfurt     |              10 |
+| Klagenfurt     |              10 |
++----------------+-----------------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT vorname AS Vorname, nachname AS Nachname, geburtsdatum AS Geburtsdatum, TIMESTAMPDIFF(YEAR, geburtsdatum, CURRENT_DATE()) AS Lebensalter
+    -> FROM person;
++---------+---------------+--------------+-------------+
+| Vorname | Nachname      | Geburtsdatum | Lebensalter |
++---------+---------------+--------------+-------------+
+| Ulrich  | Blotzek       | 1960-10-05   |          63 |
+| Peter   | Schatter      | 1980-01-01   |          44 |
+| Albert  | Wojack        | 1955-06-15   |          68 |
+| Veera   | Virtanen      | 1992-12-30   |          31 |
+| Ahvo    | Hämäläinen    | 1977-04-23   |          47 |
+| Fenna   | Huisman       | 1971-08-17   |          52 |
+| Lieke   | Prins         | 1987-05-08   |          36 |
+| Paula   | David         | 1970-01-21   |          54 |
+| Joseph  | Hardiff       | 1962-08-09   |          61 |
++---------+---------------+--------------+-------------+
+9 rows in set (0.00 sec)
+
+mysql> notee
