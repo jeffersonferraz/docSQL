@@ -163,8 +163,9 @@ FROM person;
 | Hardiff       | Klagenfurt     |         9200 | Österreich  |
 +---------------+----------------+--------------+-------------+
 ```
+### [Log-Datei](logFile/1.log)
 
-## 2. Abfragen mit einfachen Aggregat-Funktionen
+## 2. Abfragen mit einfachen Aggregat-Funktionen 
 
 #### Berechnungen mit den in der Datenbank gespeicherten Werten. Abfragen mit der Tabelle 'artikel'.
 
