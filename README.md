@@ -163,7 +163,7 @@ FROM person;
 | Hardiff       | Klagenfurt     |         9200 | Österreich  |
 +---------------+----------------+--------------+-------------+
 ```
-#### [Log-Datei Abschnitt 1](logFile/1.log)
+#### » [Log-Datei Abschnitt 1](logFile/1.log)
 <br>
 
 ## 2. Abfragen mit einfachen Aggregat-Funktionen 
@@ -219,7 +219,7 @@ FROM artikel;
 | Monitor    |      500.00 |    25000.00 |
 +------------+-------------+-------------+
 ```
-#### [Log-Datei Abschnitt 2](logFile/2.log)
+#### » [Log-Datei Abschnitt 2](logFile/2.log)
 <br>
 
 ## 3. Abfragen mit logischen Operatoren
@@ -290,7 +290,7 @@ WHERE land = 'Deutschland' AND geburtsdatum > '1960-06-01';
 | Schatter | Augsburg | 1980-01-01   |
 +----------+----------+--------------+
 ```
-#### [Log-Datei Abschnitt 3](logFile/3.log)
+#### » [Log-Datei Abschnitt 3](logFile/3.log)
 <br>
 
 ## 4. Abfragen mit mathematischen und statischen Funktionen anwenden
@@ -366,7 +366,7 @@ FROM artikel;
 |  10.00 | 500.00 |
 +--------+--------+
 ```
-#### [Log-Datei Abschnitt 4](logFile/4.log)
+#### » [Log-Datei Abschnitt 4](logFile/4.log)
 <br>
 
 ## 5. Abfragen mit dem Vergleich von Zeichenketten
@@ -467,7 +467,7 @@ WHERE herstellername NOT LIKE 'M%' AND land IN ('Deutschland', 'USA');
 | Hewlett Packard | USA  |
 +-----------------+------+
 ```
-#### [Log-Datei Abschnitt 5](logFile/5.log)
+#### » [Log-Datei Abschnitt 5](logFile/5.log)
 <br>
 
 ## 6. Abfragen mit Zeichenketten- und Datumsfunktion
@@ -536,7 +536,7 @@ FROM person;
 | Joseph  | Hardiff       | 1962-08-09   |          61 |
 +---------+---------------+--------------+-------------+
 ```
-#### [Log-Datei Abschnitt 6](logFile/6.log)
+#### » [Log-Datei Abschnitt 6](logFile/6.log)
 <br>
 
 ## 7. Abfragen mit Gruppierung von Datenmengen
@@ -572,7 +572,7 @@ HAVING COUNT(*) > 1;
 |               10 |              15.00 |
 +------------------+--------------------+
 ```
-#### [Log-Datei Abschnitt 7](logFile/7.log)
+#### » [Log-Datei Abschnitt 7](logFile/7.log)
 <br>
 
 ## 8. Abfragen über mehrere Tabellen und Unterabfragen erstellen
@@ -761,7 +761,7 @@ WHERE b.bestellsumme = (SELECT MAX(bestellsumme) FROM bestellung);
 | Hämäläinen    | Monitor |      2500.00 |
 +---------------+---------+--------------+
 ```
-#### [Log-Datei Abschnitt 8](logFile/8.log)
+#### »[Log-Datei Abschnitt 8](logFile/8.log)
 <br>
 
 ### Research:
