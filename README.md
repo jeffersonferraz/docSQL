@@ -764,7 +764,7 @@ WHERE b.bestellsumme = (SELECT MAX(bestellsumme) FROM bestellung);
 #### » [Log-Datei Abschnitt 8](logFile/8.log)
 <br>
 
-### Research:
+### Quellen:
 
 + https://www.w3schools.com/mysql
 + https://www.w3schools.com/sql
